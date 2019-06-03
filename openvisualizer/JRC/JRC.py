@@ -249,7 +249,9 @@ class joinResource(coapResource.coapResource):
     def __init__(self):
         self.joinedNodes = []
 
-        self.networkKey = u.str2buf(os.urandom(16)) # random key every time OpenVisualizer is initialized
+        #self.networkKey = u.str2buf(os.urandom(16)) # random key every time OpenVisualizer is initialized
+        static_key = b'\xff' * 16
+        self.networkKey = u.str2buf(static_key)
         self.networkKeyIndex = 0x01 # L2 key index
 
         # initialize parent class
@@ -340,4 +342,3 @@ if __name__ == "__main__":
     raw_input('\n\nServer running. Press Enter to close.\n\n')
     
     c.close()
-
