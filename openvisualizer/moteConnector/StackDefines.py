@@ -49,7 +49,7 @@ components = {
 }
 
 errorDescriptions = {
-   1: "node joined",
+   1: "node joined {0}.{1}",
    2: "OSCOAP sequence number reached maximum value",
    3: "OSCOAP buffer overflow detected (code location {0})",
    4: "OSCOAP replay protection failed",
@@ -82,7 +82,7 @@ errorDescriptions = {
   31: "wrong celltype {0} at slotOffset {1}",
   32: "unsupported IEEE802.15.4 parameter {1} at location {0}",
   33: "got desynchronized at slotOffset {0}",
-  34: "synchronized at slotOffset {0}",
+  34: "synchronized at ASN {0}.{1}",
   35: "large timeCorr.: {0} ticks (code loc. {1})",
   36: "wrong state {0} in end of frame+sync",
   37: "wrong state {0} in startSlot, at slotOffset {1}",
@@ -121,6 +121,7 @@ errorDescriptions = {
   70: "the received packet format is not supported (code location {0})",
   71: "the metadata type is not suppored",
   72: "maxretries reached (counter: {0})",
+
 }
 
 sixtop_returncode = {
