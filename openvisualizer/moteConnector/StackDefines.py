@@ -81,7 +81,7 @@ errorDescriptions = {
   30: "the cells reserved to request mote contains slot {0} and slot {1}",
   31: "wrong celltype {0} at slotOffset {1}",
   32: "unsupported IEEE802.15.4 parameter {1} at location {0}",
-  33: "got desynchronized at slotOffset {0}",
+  33: "desynchronized at ASN {0}.{1}",
   34: "synchronized at ASN {0}.{1}",
   35: "large timeCorr.: {0} ticks (code loc. {1})",
   36: "wrong state {0} in end of frame+sync",
