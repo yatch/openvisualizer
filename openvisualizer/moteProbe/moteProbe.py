@@ -239,8 +239,8 @@ class moteProbe(threading.Thread):
         
         if self.mode == self.MODE_TESTBED:
             # initialize variable for testbedmote
-            self.serialbytes_queue       = Queue.Queue(maxsize=10) # create queue for receiving serialbytes messages
             
+            self.serialbytes_queue       = Queue.Queue() # create queue for receiving serialbytes messages
             # mqtt client
             self.mqttclient                = mqtt.Client()
             self.mqttclient.on_connect     = self._on_mqtt_connect
