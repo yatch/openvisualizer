@@ -126,7 +126,7 @@ class OpenVisualizerApp(object):
             eventLogger.eventLogger(ms) for ms in self.moteStates
         ]
 
-        self.remoteConnectorServer = remoteConnectorServer.remoteConnectorServer()
+        #self.remoteConnectorServer = remoteConnectorServer.remoteConnectorServer()
 
 
         # boot all emulated motes, if applicable
