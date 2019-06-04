@@ -34,7 +34,7 @@ class eventLogger(threading.Thread):
     
     def run(self):
         
-        while True:
+        while False:
             # by default, don't write to local files
             pass
             
