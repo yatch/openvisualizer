@@ -280,7 +280,6 @@ class RPL(eventBusClient.eventBusClient):
         output               = '\n'.join(output)
         if log.isEnabledFor(logging.DEBUG):
             log.debug(output)
-        print output
         assert len(parents) == 1
         assert len(children) == 1
         log.info('DAO parent-{0}:{1}, child-{2}:{3}'.format(u.formatIPv6Addr(self.networkPrefix),
