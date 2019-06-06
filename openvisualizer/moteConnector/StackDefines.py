@@ -49,7 +49,7 @@ components = {
 }
 
 errorDescriptions = {
-   1: "node joined {0}.{1}",
+   1: "node joined at ASN {0}.{1}",
    2: "OSCOAP sequence number reached maximum value",
    3: "OSCOAP buffer overflow detected (code location {0})",
    4: "OSCOAP replay protection failed",
