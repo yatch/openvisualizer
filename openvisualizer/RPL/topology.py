@@ -39,6 +39,11 @@ class topology(eventBusClient.eventBusClient):
             registrations         =  [
                 {
                     'sender'      : self.WILDCARD,
+                    'signal'      : 'registerDagRoot',
+                    'callback'    : self.clearStates,
+                },
+                {
+                    'sender'      : self.WILDCARD,
                     'signal'      : 'updateParents',
                     'callback'    : self.updateParents,
                 },
@@ -74,7 +79,12 @@ class topology(eventBusClient.eventBusClient):
                 states.append(d)
         
         return states, edges
-        
+
+    def clearStates(self,sender,signal,data):
+        with self.dataLock:
+            self.parents         = {}
+            self.parentsLastSeen = {}
+
     def updateParents(self,sender,signal,data):
         ''' inserts parent information into the parents dictionary '''
         with self.dataLock:
