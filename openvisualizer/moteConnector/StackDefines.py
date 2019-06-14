@@ -121,7 +121,9 @@ errorDescriptions = {
   70: "the received packet format is not supported (code location {0})",
   71: "the metadata type is not suppored",
   72: "maxretries reached (counter: {0})",
-  79: "sixtop.eb.tx at ASN {0}.{1}",
+  77: "msf.housekeeping at ASN {0}.{1}",
+  78: "sixtop.eb.tx at ASN {0}.{1}",
+  79: "rpl.dio.tx at ASN {0}.{1}",
   80: "rpl.churn at ASN {0}.{1}",
 
 }
