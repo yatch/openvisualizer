@@ -1,11 +1,12 @@
 #!/usr/bin/python
-# Copyright (c) 2010-2013, Regents of the University of California. 
-# All rights reserved. 
-#  
+# Copyright (c) 2010-2013, Regents of the University of California.
+# All rights reserved.
+#
 # Released under the BSD 3-Clause license as published at the link below.
 # https://openwsn.atlassian.net/wiki/display/OW/License
 
 import sys
+import time
 import os
 
 if __name__=="__main__":
@@ -32,24 +33,24 @@ import openvisualizer.openvisualizer_utils as u
 
 
 class OpenVisualizerCli(Cmd):
-        
+
     def __init__(self,app):
         log.info('Creating OpenVisualizerCli')
-        
+
         # store params
         self.app                    = app
-        
+
         Cmd.__init__(self)
         self.doc_header = 'Commands (type "help all" or "help <topic>"):'
         self.prompt     = '> '
         self.intro      = '\nOpenVisualizer  (type "help" for commands)'
-        
+
     #======================== public ==========================================
-    
+
     #======================== private =========================================
-    
+
     #===== callbacks
-    
+
     def do_state(self, arg):
         """
         Prints provided state, or lists states.
@@ -69,11 +70,11 @@ class OpenVisualizerCli(Cmd):
                     self.stdout.write('\n')
                 except ValueError as err:
                     self.stdout.write(err)
-    
+
     def do_list(self, arg):
         """List available states. (Obsolete; use 'state' without parameters.)"""
         self.do_state('')
-    
+
     def do_root(self, arg):
         """
         Sets dagroot to the provided mote, or lists motes
@@ -94,7 +95,7 @@ class OpenVisualizerCli(Cmd):
                         ms.triggerAction(moteState.moteState.TRIGGER_DAGROOT)
                 except ValueError as err:
                     self.stdout.write(err)
-    
+
     def do_set(self,arg):
         """
         Sets mote with parameters
@@ -143,7 +144,7 @@ class OpenVisualizerCli(Cmd):
                                                 name[3:80-maxlen], doc))
                 except AttributeError:
                     pass
-    
+
     def do_quit(self, arg):
         self.app.close()
         return True
@@ -156,6 +157,5 @@ class OpenVisualizerCli(Cmd):
 
 if __name__=="__main__":
     app = openVisualizerApp.main()
-    app.eventBusMonitor.setWiresharkDebug(True)
-    cli = OpenVisualizerCli(app)
-    cli.cmdloop()
+    while True:
+        time.sleep(600)
